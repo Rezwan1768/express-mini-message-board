@@ -1,0 +1,24 @@
+<%- include("../partials/header", {title, links}) %>
+  <h1>
+    <%= title %>
+  </h1>
+  
+  <ul>
+    <% messages.forEach((message)=> { %>
+      <li>
+        <span>
+          <%= message.user %>:
+        </span>
+
+        <span>
+          <%= message.text %>
+        </span>
+
+        <a href="/messages/<%= message.user %>">
+          Message Details
+        </a>
+      </li>
+
+      <% }); %>
+  </ul>
+  <%- include("../partials/footer") %>

@@ -1,0 +1,8 @@
+<%- include("../partials/header", {title, links}) %>
+<h1>
+  <%= title %>
+</h1>
+<p>User: <%=message.user %></p>
+<p>Message: <%=message.text %></p>
+<p>Time: <%=message.added %></p>
+<%- include("../partials/footer") %>
