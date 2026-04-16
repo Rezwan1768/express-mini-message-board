@@ -9,7 +9,7 @@ const {
   createMessage} = indexController;
 
 indexRouter.get("/", getMessages);
-indexRouter.get("/messages/:name", getMessageDetail);
+indexRouter.get("/messages/:id", getMessageDetail);
 indexRouter.get("/new", getNewMessageForm);
 indexRouter.post("/new", createMessage);
 

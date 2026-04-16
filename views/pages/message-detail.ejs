@@ -2,7 +2,8 @@
 <h1>
   <%= title %>
 </h1>
-<p>User: <%=message.user %></p>
+<p>User: <%=message.username %></p>
 <p>Message: <%=message.text %></p>
-<p>Time: <%=message.added %></p>
+<p>Time: <%=message.created_at %></p>
+
 <%- include("../partials/footer") %>

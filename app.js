@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require("node:path");
 const express = require("express");
 const indexRouter = require("./routes/indexRouter");
@@ -9,6 +10,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
+
 
 app.use((req, res, next) => {
   res.status(404).send("Page not found");

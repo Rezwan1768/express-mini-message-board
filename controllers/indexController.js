@@ -1,16 +1,15 @@
-const messages = require("../data/messages");
+const db = require("../db/queries");
+// const messages = require("../data/messages");
 const links = require("../data/links");
 const NotFoundError = require("../errors/NotFoundError")
 
-function getMessages(req, res) {
+async function getMessages(req, res) {
+  const messages = await db.getAllMessages();
   res.render("pages/index", {title: "Messages", links, messages});
 }
 
-function getMessageDetail(req, res) {
-  const message = messages.find(
-    (message) => message.user === req.params.name
-  );
-
+async function getMessageDetail(req, res) {
+  const message = await db.getMessage(Number(req.params.id));
   if (!message) {
     throw new NotFoundError("Message not found");
   }
@@ -22,15 +21,9 @@ function getNewMessageForm(req, res) {
   res.render("pages/form", {title: "Add Messages", links});
 }
 
-function createMessage(req, res) {
-  const { name, message } = req.body;
-
-  messages.push({
-    user: name,
-    text: message,
-    added: new Date(),
-  });
-
+async function createMessage(req, res) {
+  const { username, message } = req.body;
+  await db.createMessage(username, message);
   res.redirect("/");
 }
 

@@ -7,14 +7,14 @@
     <% messages.forEach((message)=> { %>
       <li>
         <span>
-          <%= message.user %>:
+          <%= message.username %>:
         </span>
 
         <span>
           <%= message.text %>
         </span>
 
-        <a href="/messages/<%= message.user %>">
+        <a href="/messages/<%= message.id %>">
           Message Details
         </a>
       </li>
