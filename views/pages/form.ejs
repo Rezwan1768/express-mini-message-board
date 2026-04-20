@@ -1,16 +1,17 @@
 <%- include("../partials/header", {title, links}) %>
+<%- include("../partials/error", {errors}) %>
   <h1>
     <%= title %>
   </h1>
   <form method="POST" action="/new">
     <div>
       <label for="author-name">Username:</label>
-      <input id="author-name" type="text" name="username">
+      <input id="author-name" type="text" name="username" value="<%= old?.username || '' %>">
     </div>
 
     <div>
       <label for="message">Message:</label>
-      <input id="message" type="text" name="message">
+      <input id="message" type="text" name="message" value="<%= old?.message || '' %>">
     </div>
 
     <button type="submit">Send</button>

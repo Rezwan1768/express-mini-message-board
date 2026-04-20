@@ -5,12 +5,13 @@ const indexRouter = express.Router();
 const {
   getMessages, 
   getMessageDetail, 
-  getNewMessageForm, 
+  getNewMessageForm,
+  validateMessage, 
   createMessage} = indexController;
 
 indexRouter.get("/", getMessages);
 indexRouter.get("/messages/:id", getMessageDetail);
 indexRouter.get("/new", getNewMessageForm);
-indexRouter.post("/new", createMessage);
+indexRouter.post("/new", validateMessage, createMessage);
 
 module.exports = indexRouter;

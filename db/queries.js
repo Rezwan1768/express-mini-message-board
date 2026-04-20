@@ -1,7 +1,7 @@
 const query = require("./pool");
 
 async function getAllMessages() {
-  const result = await query("SELECT * FROM messages");
+  const result = await query("SELECT * FROM messages ORDER BY id ASC");
   return result.rows;
 }
 

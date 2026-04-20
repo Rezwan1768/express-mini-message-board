@@ -3,7 +3,7 @@
 ## Live Demo
 https://express-mini-message-board-nlk7.onrender.com/
 
-A simple message board application built with **Node.js, Express, and EJS**. Users can submit messages which are then displayed on the board. Messages exist only while the server is running since the app does not use a database.
+A simple message board application built with **Node.js, Express, and EJS**. Users can submit messages which are then displayed on the board. MMessages are stored in a PostgreSQL database, allowing data to persist across server restarts.
 
 This project was primarily created to practice **Express.js architecture and best practices**, including routing, middleware, controllers, and error handling.
 
@@ -26,7 +26,7 @@ This project was primarily created to practice **Express.js architecture and bes
 - **Node.js**
 - **Express**
 - **EJS**
-
+- **PostgreSQL**
 ---
 
 ## Concepts Practiced
@@ -51,7 +51,7 @@ Express middleware is used for:
 
 ### Custom Errors
 
-A custom `NotFoundError` class is used to represent specific HTTP errors.
+A custom `HttpError` class is used to represent specific HTTP errors.
 
 ### Error Handling
 
