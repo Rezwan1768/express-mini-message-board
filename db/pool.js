@@ -7,6 +7,7 @@ const pool = new Pool({
   ca: fs.readFileSync(
     path.join(__dirname, "../certs/ca.pem")
   ).toString(),
+  rejectUnauthorized: true,
 });
 
 function query(text, params) {
