@@ -1,4 +1,5 @@
 const {Client} = require("pg");
+const fs = require("fs");
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
@@ -27,6 +28,9 @@ async function main() {
 
   const client = new Client({
     connectionString,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   });
   
   try {
