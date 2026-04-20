@@ -4,10 +4,12 @@ const { Pool } = require("pg");
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ca: fs.readFileSync(
-    path.join(__dirname, "../certs/ca.pem")
-  ).toString(),
-  rejectUnauthorized: true,
+  ssl: {
+    ca: fs.readFileSync(
+      path.join(__dirname, "../certs/ca.pem")
+    ).toString(),
+    rejectUnauthorized: true,
+  }
 });
 
 function query(text, params) {
