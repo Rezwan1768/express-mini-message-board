@@ -7,7 +7,6 @@ const pool = new Pool({
   ssl: {
     ssl: {
       ca: fs.readFileSync("/etc/secrets/ca.pem").toString(),
-      rejectUnauthorized: true,
     },
   }
 
