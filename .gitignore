@@ -33,3 +33,8 @@ build/
 
 # Optional eslint cache
 .eslintcache
+
+certs/
+*.pem
+*.key
+*.crt
