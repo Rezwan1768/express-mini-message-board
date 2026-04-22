@@ -3,7 +3,7 @@ const path = require("path");
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  connectionString: process.env.LOCAL_DATABASE_URL,
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     ssl: {
       ca: fs.readFileSync("/etc/secrets/ca.pem").toString(),
