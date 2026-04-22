@@ -5,9 +5,8 @@ const { Pool } = require("pg");
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    ssl: {
-      ca: fs.readFileSync("/etc/secrets/ca.pem"),
-    },
+    ca: fs.readFileSync("/etc/secrets/ca.pem").toString(),
+    rejectUnauthorized: true,
   }
 
 });
